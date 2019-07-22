@@ -1,15 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registration Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <header style="text-align: center">Welcome Back!</header> 
-  <!-- Textarea in an item with a placeholder -->
-  <ion-item>
-    <ion-textarea placeholder="Username or Email"></ion-textarea>
-  </ion-item>
+  <ion-card>
+    <ion-card-header>
+      Get Started
+    </ion-card-header>
 
-  <ion-item>
-      <ion-textarea placeholder="Password"></ion-textarea>
-  </ion-item>
-
-  <div text-center>
-    <ion-button shape="round" (click)="navToLogin()">Register</ion-button>
-  </div>
+    <ion-card-content>
+      <ion-item>
+        <ion-input placeholder="Name" [(ngModel)]="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-input placeholder="Last Name" [(ngModel)]="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Role</ion-label>
+        <ion-select placeholder="Select One" [(ngModel)]="role">
+          <ion-select-option value="user" >User</ion-select-option>
+          <ion-select-option value="provider">Provider</ion-select-option>
+          <ion-select-option value="admin">Admin</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-input placeholder="Phone #" [(ngModel)]="cellPhone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Email*" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-input placeholder="Password*" type="password" [(ngModel)]= "password"> </ion-input>
+      </ion-item>
+      <div text-center>
+        <ion-button shape="round" (click)="register()">REGISTER</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+

@@ -51,7 +51,7 @@ export class RegistrationPage implements OnInit {
       const testId = localStorage.getItem('userid');
       console.log(testId);
 
-      this.navCtrl.navigateForward('main/tabs/explore', {
+      this.navCtrl.navigateForward('main/tabs/tab1', {
         queryParams: {
           // puts id (res-ponse) in the URL ?user=userid
           user: res

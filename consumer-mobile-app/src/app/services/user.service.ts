@@ -20,7 +20,6 @@ export class UserService {
         .get(environment.BaseURL + "/api/user/")
         .subscribe(
           (response) => {
-            this.navCtrl.navigateForward("main/tabs/explore")
             resolve(response)
           },
           (err) => {
