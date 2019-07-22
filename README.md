@@ -4,8 +4,8 @@ iXperience Final Project
 ## Project File Structure
 | PROJECT             | COMPONENT          | FILE NAMES                                                                                                                                                                              |
 |---------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Consumer mobile app | Login              | eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\pages\login & eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\providers\login               |
-| Consumer mobile app | Registration       | eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\pages\registration & eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\providers\registration |
+| Consumer mobile app | Login              | ix_final_proj\consumer-mobile-app\src\pages\login        |
+| Consumer mobile app | Registration       | ix_final_proj\consumer-mobile-app\src\pages\registration |
 | Consumer mobile app | User Profile       | eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\pages\user & eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\providers\user                 |
 | Consumer mobile app | List of Properties | eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\pages\properties & eg. Rubric-file-structure\consumer-mobile-app\consumer-mobile-app\src\providers\properties     |
 | Provider mobile app | Login              | eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\pages\login & eg. Rubric-file-structure\provider-mobile-app\provider-mobile-app\src\providers\login               |
