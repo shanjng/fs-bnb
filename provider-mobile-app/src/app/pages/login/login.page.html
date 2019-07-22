@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin Login Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Login Information
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+          <ion-input placeholder="Password" type="password" [(ngModel)]= "password"> </ion-input>
+      </ion-item>
+    
+      <div text-center>
+        <ion-button shape="round" (click)="login()">LOGIN</ion-button>
+      </div>
+
+      <div text-center>
+        <ion-button shape="round" (click)="navTo('registration')">REGISTRATION</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
