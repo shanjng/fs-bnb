@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/index'
 import { NavController } from '@ionic/angular'
-import { User } from '../../models/index'
+import { User } from '../../models/user.model'
 import { AlertController } from '@ionic/angular'
 
 @Component({
@@ -10,9 +10,7 @@ import { AlertController } from '@ionic/angular'
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public user = new User();
-  public email: string;
-  public password: string;
+  public authUser = new User();
 
   constructor(
     private navCtrl: NavController,
@@ -25,10 +23,10 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  async presentAlert(err) {
+  async presentAlert(source, err) {
     const alert = await this.alertCtrl.create({
       header: 'Alert',
-      subHeader: 'Problem with Login',
+      subHeader: 'Problem with ' + source,
       message: err,
       buttons: ['OK']
     });
@@ -42,12 +40,7 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    console.log("login consumer")
-    const authUser = {
-      email: this.email,
-      password: this.password
-    }
-    this.authService.login(authUser).then(res => {
+    this.authService.login(this.authUser).then(res => {
 
       const testId = localStorage.getItem('userid');
       console.log(testId);
@@ -59,7 +52,7 @@ export class LoginPage implements OnInit {
         }
       }); 
     }).catch(err => {
-      this.presentAlert(err);
+      this.presentAlert("Login", err.error);
     })
   }
 }

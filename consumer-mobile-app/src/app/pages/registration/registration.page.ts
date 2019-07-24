@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { AlertController, NavController } from '@ionic/angular'
+import { User } from '../../models/user.model'
 
 @Component({
   selector: 'app-registration',
@@ -8,13 +9,7 @@ import { AlertController, NavController } from '@ionic/angular'
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
-
-  public firstName: string;
-  public lastName: string;
-  public cellPhone: string;
-  public email: string;
-  public password: string;
-  public role: string;
+  public authUser = new User();
 
   constructor(
     private navCtrl: NavController,
@@ -25,10 +20,10 @@ export class RegistrationPage implements OnInit {
   ngOnInit() {
   }
 
-  async presentAlert(err) {
+  async presentAlert(source, err) {
     const alert = await this.alertCtrl.create({
       header: 'Alert',
-      subHeader: 'Problem with Login',
+      subHeader: 'Problem with ' + source,
       message: err,
       buttons: ['OK']
     });
@@ -37,16 +32,7 @@ export class RegistrationPage implements OnInit {
   }
 
   register() {
-    console.log(this.role)
-    const authUser = {
-      firstName: this.firstName,
-      lastName: this.lastName,
-      cellPhone: this.cellPhone,
-      email: this.email,
-      password: this.password,
-      role: this.role
-    }
-    this.authService.register(authUser).then(res => {
+    this.authService.register(this.authUser).then(res => {
 
       const testId = localStorage.getItem('userid');
       console.log(testId);
@@ -58,7 +44,8 @@ export class RegistrationPage implements OnInit {
         }
       }); 
     }).catch(err => {
-      this.presentAlert(err);
+      console.log(err)
+      this.presentAlert("Registration", err.error);
     })
   }  
 

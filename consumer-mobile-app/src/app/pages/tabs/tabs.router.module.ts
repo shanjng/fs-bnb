@@ -17,38 +17,38 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
+        path: 'saved',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../saved/saved.module#SavedPageModule'
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'trips',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../trips/trips.module#tripsPageModule'
           }
         ]
       },
       {
-        path: 'tab4',
+        path: 'inbox',
         children: [
           {
             path: '',
-            loadChildren: '../tab4/tab4.module#Tab4PageModule'
+            loadChildren: '../inbox/inbox.module#inboxPageModule'
           }
         ]
       },
       {
-        path: 'tab5',
+        path: 'profile',
         children: [
           {
             path: '',
-            loadChildren: '../tab5/tab5.module#Tab5PageModule'
+            loadChildren: '../profile/profile.module#profilePageModule'
           }
         ]
       },

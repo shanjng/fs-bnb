@@ -17,6 +17,7 @@ export class AuthService {
       
       // headers: key value pairs for metadata 
       const headers = new HttpHeaders();
+      console.log("auth login")
 
       this.http.post(environment.BaseURL + "/api/auth/login", authUser, { headers }).subscribe(
         (response: any) => {
@@ -24,7 +25,7 @@ export class AuthService {
         resolve(response)
       },
         (err) => {
-          console.log("err: ", err)
+          console.log(err)
           reject(err)
         }
       ) 

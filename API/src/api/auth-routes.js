@@ -7,7 +7,6 @@ router.post('/login', (req,res) => {
     AuthService.prototype
         .login(req.body)
         .then(user => {
-            console.log("res:", user)
             res.send(user)
         })
         .catch(err => {
@@ -17,7 +16,6 @@ router.post('/login', (req,res) => {
 
 
 router.post('/register', (req,res) => {
-    console.log("auth-routes.js router.post")
     AuthService.prototype
         .register(req.body)
         .then(user => {

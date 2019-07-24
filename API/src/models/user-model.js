@@ -15,7 +15,7 @@ module.exports = class User {
     this.lastName = user.lastName,
     this.cellPhone = user.cellPhone,
     this.email = user.email,
-    this.password = this.password,
+    this.password = user.password,
     this.role = user.role;
   }
 

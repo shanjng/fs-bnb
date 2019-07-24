@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ExplorePage {
 
+  users: any[] = ["joe", "bro", "toe"];
+
   constructor() {}
 
 }
