@@ -7,12 +7,14 @@ import { User } from "../../models/user.model"
   templateUrl: 'profile.page.html',
   styleUrls: ['profile.page.scss']
 })
-export class profilePage {
-  public user:User = new User(); 
+export class ProfilePage {
+  public user: User
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    
     ) {
+      this.user = new User()
       this.user.id = localStorage.getItem("userid");
 
       this.userService.getById(this.user.id)
