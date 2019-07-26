@@ -6,12 +6,18 @@ module.exports = class ListingService {
     create(req) {
         return new Promise((resolve, reject) => {
             Listing.prototype.create(req)
-            .then(res =>
-                {resolve(res)}
-            )
+            .then(res =>resolve(res))
             .catch(err => 
                 {reject(err)}
             )
+        })
+    }
+
+    get() {
+        return new Promise((resolve, reject) => {
+            Listing.prototype.get()
+            .then(res => resolve(res))
+            .catch(err => reject(err))
         })
     }
  }

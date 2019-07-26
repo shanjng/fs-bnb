@@ -14,13 +14,19 @@ module.exports = class Listing {
 
     create(req) {
         return new Promise((resolve, reject) => {
-            mysqlConn.query("INSERT INTO listing set ?", req, function(err, res) {
-                if (err) {
-                  reject(err)
-                } else {
-                  resolve(res.insertId);
-                }
+            mysqlConn.query("INSERT INTO listing set ?", req, function(err, res){
+                if (err) { reject(err) } 
+                else { resolve(res) }
             })
         })    
+    }
+
+    get() {
+        return new Promise((resolve, reject) => {
+            mysqlConn.query("SELECT * FROM listing", function(err, res) {
+                if (err) { reject(err) } 
+                else { resolve(res) }
+            })
+        })   
     }
 }

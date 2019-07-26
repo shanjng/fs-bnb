@@ -16,7 +16,13 @@ router.post("/",function(req,res) {
 })
 // read
 router.get("/",function(req,res) {
-    res.send("listings GET request");
+    listServ.get(req.body)
+    .then(response => {
+        res.send(response)
+    })
+    .catch(err => {
+        res.status(400).send(err)
+    })
 })
 // update
 router.put("/",function(req,res) {

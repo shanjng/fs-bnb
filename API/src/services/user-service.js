@@ -14,6 +14,16 @@ module.exports = class UserService {
         });
     });
   }
+
+  getById(id) {
+    return new Promise((resolve, reject) =>{
+      User.prototype
+      .getById(id, (err, res)=> {
+        if(err) reject(err)
+        else resolve(res)
+      })
+    })
+  }
   
   // register(newUser) {
   //   return new Promise((resolve, reject) => {

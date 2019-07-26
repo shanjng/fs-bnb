@@ -31,6 +31,18 @@ module.exports = class User {
     });
   }
 
+  getById(id, result) {
+    mysqlConn.query("Select * from user where id = " + id, (err, res) => {
+      if (err) {
+        console.log("error: ", err)
+        result(err, null)
+      }
+      else {
+        result(null, res[0])
+      }
+    }) 
+  }
+
   createUser(newUser, result) {
     mysqlConn.query("INSERT INTO user set ?", newUser, function(err, res) {
       if (err) {
