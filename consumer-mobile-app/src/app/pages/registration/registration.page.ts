@@ -9,7 +9,7 @@ import { User } from '../../models/user.model'
   styleUrls: ['./registration.page.scss'],
 })
 export class RegistrationPage implements OnInit {
-  public authUser = new User();
+  public authUser: User = new User()
 
   constructor(
     private navCtrl: NavController,

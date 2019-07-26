@@ -1,11 +1,39 @@
 <ion-header>
-  <ion-toolbar>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <p><strong>Trips</strong></p><br>
-  <strong>No Upcoming Trips</strong><br>
-
-  <ion-button shape="round" (click)="navToExplore()">Explore Airbnb</ion-button>
-</ion-content>
+    <ion-toolbar>
+      <ion-title>Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content
+  [scrollEvents]="true"
+  (ionScrollStart)="logScrollStart()"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollEnd)="logScrollEnd()">
+    
+    <ion-item>
+      <strong>Hi, I'm {{user.firstName}} {{user.lastName}}! </strong>
+      <ion-avatar style="float:right">
+        <img src="../../../../../imgs/users/user{{user.id}}">
+      </ion-avatar>
+    </ion-item>
+  
+    <ion-item>
+      <p>
+        <strong>About</strong><br>
+        Email: {{user.email}}<br>
+      </p>
+    </ion-item>
+  
+    <ion-item>
+        <p>{{user.firstName}} provided<br>
+        <ion-icon name="checkmark-circle-outline"></ion-icon> Email address<br>
+        <ion-icon name="checkmark-circle-outline"></ion-icon> Phone number<br>
+        </p>
+    </ion-item>
+    
+    <ion-item>
+        <strong> # reviews</strong>
+        
+    </ion-item>
+  </ion-content>
+  

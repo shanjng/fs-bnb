@@ -156,7 +156,7 @@ interface JQueryAjaxSettings {
      */
     xhr?: any;
     /**
-     * An object of fieldName-fieldValue pairs to set on the native XHR object. For example, you can use it to set withCredentials to true for cross-domain requests if needed. In jQuery 1.5, the withCredentials property was not propagated to the native XHR and thus CORS requests requiring it would ignore this flag. For this reason, we recommend using jQuery 1.5.1+ should you require the use of it. (version added: 1.5.1)
+     * An object of fieldName-fieldValue pairs to set on the native XHR object. For example, you can use it to set withCredentials to true for cross-domain requests if needed. In jQuery 1.5, the withCredentials listing was not propagated to the native XHR and thus CORS requests requiring it would ignore this flag. For this reason, we recommend using jQuery 1.5.1+ should you require the use of it. (version added: 1.5.1)
      */
     xhrFields?: { [key: string]: any; };
 }
@@ -180,7 +180,7 @@ interface JQueryXHR extends XMLHttpRequest, JQueryPromise<any> {
      */
     then(doneCallback: (data: any, textStatus: string, jqXHR: JQueryXHR) => void, failCallback?: (jqXHR: JQueryXHR, textStatus: string, errorThrown: any) => void): JQueryPromise<any>;
     /**
-     * Property containing the parsed response if the response Content-Type is json
+     * listing containing the parsed response if the response Content-Type is json
      */
     responseJSON?: any;
     /**
@@ -572,7 +572,7 @@ interface JQueryAnimationOptions {
      */
     complete?: Function; 
     /**
-     * A function to be called for each animated property of each animated element. This function provides an opportunity to modify the Tween object to change the value of the property before it is set.
+     * A function to be called for each animated listing of each animated element. This function provides an opportunity to modify the Tween object to change the value of the listing before it is set.
      */
     step?: (now: number, tween: any) => any; 
     /**
@@ -813,7 +813,7 @@ interface JQueryStatic {
     when<T>(...deferreds: Array<T|JQueryPromise<T>/* as JQueryDeferred<T> */>): JQueryPromise<T>;
 
     /**
-     * Hook directly into jQuery to override how particular CSS properties are retrieved or set, normalize CSS property naming, or create custom properties.
+     * Hook directly into jQuery to override how particular CSS properties are retrieved or set, normalize CSS listing naming, or create custom properties.
      */
     cssHooks: { [key: string]: any; };
     cssNumber: any;
@@ -927,7 +927,7 @@ interface JQueryStatic {
      * Takes a function and returns a new one that will always have a particular context.
      *
      * @param context The object to which the context (this) of the function should be set.
-     * @param name The name of the function whose context will be changed (should be a property of the context object).
+     * @param name The name of the function whose context will be changed (should be a listing of the context object).
      * @param additionalArguments Any number of arguments to be passed to the function named in the name argument.
      */
     proxy(context: Object, name: string, ...additionalArguments: any[]): any;
@@ -958,7 +958,7 @@ interface JQueryStatic {
     contains(container: Element, contained: Element): boolean;
 
     /**
-     * A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.
+     * A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length listing (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.
      * 
      * @param collection The object or array to iterate over.
      * @param callback The function that will be executed on every object.
@@ -969,7 +969,7 @@ interface JQueryStatic {
         ): any;
 
     /**
-     * A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length property (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.
+     * A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. Arrays and array-like objects with a length listing (such as a function's arguments object) are iterated by numeric index, from 0 to length-1. Other objects are iterated via their named properties.
      * 
      * @param collection The object or array to iterate over.
      * @param callback The function that will be executed on every object.
@@ -1083,7 +1083,7 @@ interface JQueryStatic {
      * Translate all items in an array or object to new array of items.
      * 
      * @param arrayOrObject The Array or Object to translate.
-     * @param callback The function to process each item against. The first argument to the function is the value; the second argument is the index or key of the array or object property. The function can return any value to add to the array. A returned array will be flattened into the resulting array. Within the function, this refers to the global (window) object.
+     * @param callback The function to process each item against. The first argument to the function is the value; the second argument is the index or key of the array or object listing. The function can return any value to add to the array. A returned array will be flattened into the resulting array. Within the function, this refers to the global (window) object.
      */
     map(arrayOrObject: any, callback: (value: any, indexOrKey: any) => any): any;
 
@@ -1293,29 +1293,29 @@ interface JQuery {
      */
 
     /**
-     * Get the value of a property for the first element in the set of matched elements.
+     * Get the value of a listing for the first element in the set of matched elements.
      *
-     * @param propertyName The name of the property to get.
+     * @param propertyName The name of the listing to get.
      */
     prop(propertyName: string): any;
     /**
      * Set one or more properties for the set of matched elements.
      *
-     * @param propertyName The name of the property to set.
-     * @param value A value to set for the property.
+     * @param propertyName The name of the listing to set.
+     * @param value A value to set for the listing.
      */
     prop(propertyName: string, value: string|number|boolean): JQuery;
     /**
      * Set one or more properties for the set of matched elements.
      *
-     * @param properties An object of property-value pairs to set.
+     * @param properties An object of listing-value pairs to set.
      */
     prop(properties: Object): JQuery;
     /**
      * Set one or more properties for the set of matched elements.
      *
-     * @param propertyName The name of the property to set.
-     * @param func A function returning the value to set. Receives the index position of the element in the set and the old property value as arguments. Within the function, the keyword this refers to the current element.
+     * @param propertyName The name of the listing to set.
+     * @param func A function returning the value to set. Receives the index position of the element in the set and the old listing value as arguments. Within the function, the keyword this refers to the current element.
      */
     prop(propertyName: string, func: (index: number, oldPropertyValue: any) => any): JQuery;
 
@@ -1340,9 +1340,9 @@ interface JQuery {
     removeClass(func: (index: number, className: string) => string): JQuery;
 
     /**
-     * Remove a property for the set of matched elements.
+     * Remove a listing for the set of matched elements.
      *
-     * @param propertyName The name of the property to remove.
+     * @param propertyName The name of the listing to remove.
      */
     removeProp(propertyName: string): JQuery;
 
@@ -1388,27 +1388,27 @@ interface JQuery {
     /**
      * Get the value of style properties for the first element in the set of matched elements.
      *
-     * @param propertyName A CSS property.
+     * @param propertyName A CSS listing.
      */
     css(propertyName: string): string;
     /**
      * Set one or more CSS properties for the set of matched elements.
      *
-     * @param propertyName A CSS property name.
-     * @param value A value to set for the property.
+     * @param propertyName A CSS listing name.
+     * @param value A value to set for the listing.
      */
     css(propertyName: string, value: string|number): JQuery;
     /**
      * Set one or more CSS properties for the set of matched elements.
      *
-     * @param propertyName A CSS property name.
+     * @param propertyName A CSS listing name.
      * @param value A function returning the value to set. this is the current element. Receives the index position of the element in the set and the old value as arguments.
      */
     css(propertyName: string, value: (index: number, value: string) => string|number): JQuery;
     /**
      * Set one or more CSS properties for the set of matched elements.
      *
-     * @param properties An object of property-value pairs to set.
+     * @param properties An object of listing-value pairs to set.
      */
     css(properties: Object): JQuery;
 

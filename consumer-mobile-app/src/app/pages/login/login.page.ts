@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/index'
-import { NavController } from '@ionic/angular'
+import { NavController, AlertController } from '@ionic/angular'
 import { User } from '../../models/user.model'
-import { AlertController } from '@ionic/angular'
 
 @Component({
   selector: 'app-login',
@@ -10,7 +9,7 @@ import { AlertController } from '@ionic/angular'
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public authUser = new User();
+  public authUser: User = new User();
 
   constructor(
     private navCtrl: NavController,
@@ -45,12 +44,7 @@ export class LoginPage implements OnInit {
       const testId = localStorage.getItem('userid');
       console.log(testId);
 
-      this.navCtrl.navigateForward('main/tabs/explore', {
-        queryParams: {
-          // puts id (res-ponse) in the URL ?user=userid
-          user: res
-        }
-      }); 
+      this.navCtrl.navigateForward('main/tabs/explore'); 
     }).catch(err => {
       this.presentAlert("Login", err.error);
     })

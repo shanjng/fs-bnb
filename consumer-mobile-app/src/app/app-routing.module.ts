@@ -6,7 +6,8 @@ const routes: Routes = [
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'main', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
   { path: 'registration', loadChildren: './pages/registration/registration.module#RegistrationPageModule' },
-];
+  { path: 'property', loadChildren: './pages/property/property.module#PropertyPageModule' },
+] 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
