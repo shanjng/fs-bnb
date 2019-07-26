@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       email: this.email,
       password: this.password
     }
-    this.authService.login(authUser).then(res => {
+    this.authService.login(authUser).then((res: User) => {
 
       const testId = localStorage.getItem('userid');
       console.log(testId);
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['dashboard'], {
         queryParams: {
           // puts id (res-ponse) in the URL ?user=userid
-          user: res
+          user: res.id
         }
       }); 
     }).catch(err => {

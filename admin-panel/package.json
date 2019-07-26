@@ -21,6 +21,7 @@
     "@angular/router": "~8.1.0",
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
+    "express-favicon": "^2.0.1",
     "ng2": "^0.2.4",
     "ng2-charts": "^2.3.0",
     "rxjs": "~6.4.0",
