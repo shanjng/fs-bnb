@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/main/explore"></ion-back-button>
+        <ion-title>{{listing.title}}</ion-title><br>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+      <div>
+        <p>
+          <img src={{listing.imgUrl}} class="aligncenter"><br>
+        </p>
+        <strong>Location: </strong>{{listing.location}}<br>
+        <strong>Description: </strong>{{listing.description}}<br>
+        <strong>Price Per Night: </strong>${{listing.pricePerNight}}<br>
+        <strong>Rating: </strong>{{listing.rating}}/10<br>
+        <strong>Image Url: </strong>{{listing.imgUrl}}<br>
+        </div>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Start Date </ion-label>
+        <ion-datetime displayFormat="MM DD YYYY" placeholder="Select Start Date" [(ngModel)]="dateFrom"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>End Date</ion-label>
+        <ion-datetime displayFormat="MM DD YYYY" placeholder="Select End Date" [(ngModel)]="dateTo"></ion-datetime>
+      </ion-item>
+      <div text-center>
+          <ion-button shape="round" (click)="createBooking()">Book Now</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

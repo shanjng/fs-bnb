@@ -37,12 +37,7 @@ export class RegistrationPage implements OnInit {
       const testId = localStorage.getItem('userid');
       console.log(testId);
 
-      this.navCtrl.navigateForward('main/tabs/explore', {
-        queryParams: {
-          // puts id (res-ponse) in the URL ?user=userid
-          user: res
-        }
-      }); 
+      this.navCtrl.navigateForward('main/explore'); 
     }).catch(err => {
       console.log(err)
       this.presentAlert("Registration", err.error);

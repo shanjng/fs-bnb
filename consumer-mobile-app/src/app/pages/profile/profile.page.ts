@@ -8,13 +8,12 @@ import { User } from "../../models/user.model"
   styleUrls: ['profile.page.scss']
 })
 export class ProfilePage {
-  public user: User
+  public user: User = new User()
 
   constructor(
     private userService: UserService,
     
     ) {
-      this.user = new User()
       this.user.id = localStorage.getItem("userid");
 
       this.userService.getById(this.user.id)

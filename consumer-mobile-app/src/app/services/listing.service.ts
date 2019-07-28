@@ -9,7 +9,7 @@ export class ListingService {
 
   constructor(private http: HttpClient) { }
 
-  get() {
+  getAll() {
     return new Promise((resolve, reject) => {
       this.http.get(environment.BaseURL + "/api/listing/")
       .subscribe(
@@ -17,6 +17,30 @@ export class ListingService {
           resolve(response)
         },
         (err) => reject(err)
+      )
+    })
+  }
+
+  getById(id) {
+    return new Promise((resolve, reject) => {
+      this.http.get(environment.BaseURL + "/api/listing/" + id)
+      .subscribe(
+        (response: any) => {
+          resolve(response)
+        },
+        (err) => reject(err)
+      )
+    })
+  }
+
+  create(booking) {
+    return new Promise((resolve, reject) => {
+      this.http.post(environment.BaseURL + "/api/booking", booking)
+      .subscribe(
+        (response: any) => {
+          resolve(response),
+        (err) => reject(err)
+        }
       )
     })
   }

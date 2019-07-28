@@ -6,4 +6,5 @@ export class Listing {
     public rating: string;
     public description: string;
     public pricePerNight: string;
+    public imgUrl: string;
 }

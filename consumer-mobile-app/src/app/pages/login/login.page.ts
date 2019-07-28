@@ -44,7 +44,7 @@ export class LoginPage implements OnInit {
       const testId = localStorage.getItem('userid');
       console.log(testId);
 
-      this.navCtrl.navigateForward('main/tabs/explore'); 
+      this.navCtrl.navigateForward('main/explore'); 
     }).catch(err => {
       this.presentAlert("Login", err.error);
     })

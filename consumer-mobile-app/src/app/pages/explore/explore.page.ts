@@ -20,11 +20,11 @@ export class ExplorePage implements OnInit {
   }
 
   ngOnInit() {
-    this.get()
+    this.getAll()
   }
 
   navToListing(id) {
-    this.navCtrl.navigateForward(['property'], 
+    this.navCtrl.navigateForward(['listing'], 
       {queryParams: 
         {listingId: id}
       })
@@ -41,8 +41,8 @@ export class ExplorePage implements OnInit {
     await alert.present();
   }
 
-  get() {
-    this.listingService.get()
+  getAll() {
+    this.listingService.getAll()
     .then((res: Listing[]) => {
       console.log(res)
       this.listings = res;
