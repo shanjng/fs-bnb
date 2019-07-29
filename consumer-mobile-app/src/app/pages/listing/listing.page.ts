@@ -56,7 +56,7 @@ export class ListingPage implements OnInit {
   getById() {
     this.listingService.getById(this.listing.id)
     .then((res: Listing) => (this.listing = res))
-    .catch(err => console.log(err))
+    .catch(err => this.presentAlert("Listing", err.error))
   }
 
   createBooking() {

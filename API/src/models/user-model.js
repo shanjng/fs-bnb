@@ -25,7 +25,6 @@ module.exports = class User {
         console.log("error: ", err);
         result(err, null);
       } else {
-        // console.log("Users : ", res);
         result(null, res);
       }
     });
@@ -44,11 +43,12 @@ module.exports = class User {
   }
 
   createUser(newUser, result) {
+    console.log("new user: ", newUser)
     mysqlConn.query("INSERT INTO user set ?", newUser, function(err, res) {
       if (err) {
         result(err, null);
       } else {
-        result(null, res.insertId);
+        result(null, res);
       }
     });
   }

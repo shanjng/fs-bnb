@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Label } from 'ng2-charts';
 import {Router} from '@angular/router';
 
 @Component({

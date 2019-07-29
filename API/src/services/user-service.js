@@ -24,16 +24,4 @@ module.exports = class UserService {
       })
     })
   }
-  
-  // register(newUser) {
-  //   return new Promise((resolve, reject) => {
-  //       User.prototype
-  //         .create(newUser, (err, res) => {
-  //           if (err) {
-  //             reject(err);
-  //           }
-  //             resolve(res);
-  //       });
-  //   });
-  // }
 }

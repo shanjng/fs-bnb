@@ -5,13 +5,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-card *ngFor = "let listing of listings; let i = index" (click)="navToListing(i + 1)">
+  <ion-card *ngFor = "let listing of listings; let i = index" (click)="navToListing(listing.id)">
     <ion-card-content>
       <p>
         <strong>{{listing.title}}</strong><br>
         Location: {{listing.location}}<br>
       </p>
-      <img src='../../../assets/imgs/listings/listing{{i + 1}}.png'>
+      <img src='../../../assets/imgs/listings/listing{{listing.id}}.png'>
     </ion-card-content>
   </ion-card>
 </ion-content>

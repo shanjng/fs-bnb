@@ -46,7 +46,7 @@ module.exports = class AuthService {
                 })
                 if (matched.length >= 1) {
                     bycrypt.compare(authUser.password, matched[0].password)
-                    .then((match) => {
+                    .then(match => {
                         if(match) resolve(matched[0])
                         else reject("Incorrect Password")
                     })
@@ -61,7 +61,7 @@ module.exports = class AuthService {
             )
             .catch(err => {
                 console.log(err)
-                reject(err);
+                reject(err); 
             })
         })
     }

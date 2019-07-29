@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { PropertiesComponent } from './components/properties/properties.component';
 import { UsersComponent } from './components/users/users.component';
 import { BookingsComponent } from './components/bookings/bookings.component'
+import { ListingsComponent } from './components/listings/listings.component'
 
 const routes: Routes = [
   // {path: '', redirectTo: 'login', pathMatch: 'full'}, 
@@ -14,7 +14,7 @@ const routes: Routes = [
   // {path: 'properties', component: PropertiesComponent},
   // {path: 'bookings', component: BookingsComponent},
   {path: '', component:DashboardComponent, children:[
-    {path: 'properties', component:PropertiesComponent},
+    {path: 'listings', component: ListingsComponent},
     {path: 'bookings', component: BookingsComponent},
     {path: 'users', component:UsersComponent}]
   },

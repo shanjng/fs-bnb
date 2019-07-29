@@ -1,21 +1,31 @@
 const express = require("express");
 const router = express.Router();
+const BookingService = require('../services/booking-service');
 
-// create
-router.post("/",function(req,res) {
-    res.send();
+// creates a new bookings request
+router.post("/", (req, res) => {
+    BookingService.prototype.create(req.body)
+    .then(response => {
+    res.send(response)})
+    .catch(err => res.status(400).send(err))
 })
-// read
-router.get("/",function(req,res) {
-    res.send();
+
+router.get("/", (req, res) => {
+    BookingService.prototype.getAll()
+    .then(response => res.send(response))
+    .catch(err => res.status(400).send(err))
 })
-// update
-router.put("/",function(req,res) {
-    res.send();
+
+router.get("/listingId/:id", (req, res) => {
+    BookingService.prototype.getByListingId(req.params.id)
+    .then(response => res.send(response))
+    .catch(err => res.status(400).send(err))
 })
-// delete
-router.delete("/",function(req,res) {
-    res.send();
+
+router.patch("/:id", (req, res) => {
+    BookingService.prototype.updateStatus(req.params.id, req.body)
+    .then(response => res.send(response))
+    .catch(err => res.status(400).send(err))
 })
 
 module.exports = router;

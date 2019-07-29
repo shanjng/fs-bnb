@@ -17,8 +17,6 @@ router.get("/", (req, res) => {
   });
 
 router.get("/:id", (req, res) => {
-  console.log("hit id!")
-  console.log(req.params.id)
   userService.prototype.getById(req.params.id)
   .then(result =>
     res.send(result)

@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const ListingService = require('../services/listing-service');
-const listServ = new ListingService();
 
-// create
+// create listing
 router.post("/",function(req,res) {
-    listServ.create(req.body)
+    ListingService.prototype.create(req.body)
     .then((resId) =>{
         res.send(JSON.stringify(resId))
         }
@@ -13,10 +12,24 @@ router.post("/",function(req,res) {
     .catch(err => {
         res.status(400).send(err)
     })
+    
 })
+
+router.post("/imgUrl",function(req,res) {
+    ListingService.prototype.addImgUrl(req.body)
+    .then((resId) =>{
+        res.send(JSON.stringify(resId))
+        }
+    )
+    .catch(err => {
+        res.status(400).send(err)
+    })
+    
+})
+
 // read
 router.get("/",function(req,res) {
-    listServ.get(req.body)
+    ListingService.prototype.getAll()
     .then(response => {
         res.send(response)
     })
@@ -24,13 +37,38 @@ router.get("/",function(req,res) {
         res.status(400).send(err)
     })
 })
+
+router.get("/:id",function(req,res) {
+    ListingService.prototype.getById(req.params.id)
+    .then(response => {
+        res.send(response)
+    })
+    .catch(err => {
+        res.status(400).send(err)
+    })
+})
+
+router.get("/provider/:id", (req, res) => {
+    ListingService.prototype.getByProviderId(req.params.id)
+    .then(response => {
+        res.send(response)
+    })
+    .catch(err => {
+        res.status(400).send(err)
+    })
+})
+
 // update
-router.put("/",function(req,res) {
-    res.send("listings PUT request");
+router.patch("/",function(req,res) {
+    ListingService.prototype.update(req.body)
+    .then(response => {res.send(response)})
+    .catch(err => {res.status(400).send(err)})
 })
 // delete
-router.delete("/",function(req,res) {
-    res.send("listings DELETE request");
+router.delete("/:id",function(req,res) {
+    ListingService.prototype.delete(req.params.id)
+    .then(response => res.send(response))
+    .catch(err => res.status(400).send(err))
 })
 
 module.exports = router;
