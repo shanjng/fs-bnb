@@ -23,10 +23,25 @@ export class UserService {
             resolve(response)
           },
           (err) => {
-            console.log(err.error.message);
             reject(err)
           }
         )
+    })
+  }
+
+  getById(id) {
+    return new Promise((resolve, reject) => {
+      this.httpClient
+      .get(environment.BaseURL + "/api/user/" + id)
+      .subscribe(
+        (response) => {
+          resolve(response)
+        },
+        (err) => {
+          console.log(err)
+          reject(err)
+        }
+      )
     })
   }
 }

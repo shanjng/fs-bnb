@@ -12,11 +12,11 @@
 
     <ion-card-content>
       <ion-item>
-        <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
+        <ion-input placeholder="Email" (keyup.enter) = "login()" [(ngModel)]="authUser.email"></ion-input>
       </ion-item>
     
       <ion-item>
-          <ion-input placeholder="Password" type="password" [(ngModel)]= "password"> </ion-input>
+          <ion-input placeholder="Password" type="password" (keyup.enter) = "login()" [(ngModel)]= "authUser.password"> </ion-input>
       </ion-item>
     
       <div text-center>

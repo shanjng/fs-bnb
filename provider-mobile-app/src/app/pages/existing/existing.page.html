@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Existing Listings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor = "let listing of listings;" (click)="navToListing(listing.id)">
+    <ion-card-content>
+      <p text-center> 
+        <strong>{{listing.title}}</strong><br>
+        Location: {{listing.location}}<br>
+      </p>
+      <img id = "rcorners" src='../../../assets/imgs/listings/listing{{listing.id}}.png'>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/details?listingId={{listing.id}}"></ion-back-button>
+      <ion-title>Update</ion-title><br>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Change Listing Details for Listing {{listing.id}}
+   </ion-card-header>
+
+  <ion-card-content>
+    <ion-item>
+      <ion-label>Title: </ion-label>
+      <ion-input [(ngModel)]="listing.title"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Location: </ion-label>
+        <ion-input [(ngModel)]="listing.location"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Description: </ion-label>
+        <ion-input [(ngModel)]="listing.description"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Price Per Night ($): </ion-label>
+      <ion-input [(ngModel)]="listing.pricePerNight"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Image Url: </ion-label>
+        <ion-input [(ngModel)]= "listing.imgUrl"></ion-input>
+    </ion-item>
+    <div text-center>
+      <ion-button shape="round" (click)="update()">UPDATE</ion-button>
+    </div>
+    <div text-center>
+        <ion-button shape="round" color="danger" (click)="delete()">DELETE</ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>
+</ion-content>

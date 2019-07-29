@@ -15,27 +15,27 @@
 
     <ion-card-content>
       <ion-item>
-        <ion-input placeholder="Name" [(ngModel)]="firstName"></ion-input>
+        <ion-input placeholder="Name" [(ngModel)]="authUser.firstName"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-input placeholder="Last Name" [(ngModel)]="lastName"></ion-input>
+          <ion-input placeholder="Last Name" [(ngModel)]="authUser.lastName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Role</ion-label>
-        <ion-select placeholder="Select One" [(ngModel)]="role">
+        <ion-select placeholder="Select One" [(ngModel)]="authUser.role">
           <ion-select-option value="user" >User</ion-select-option>
           <ion-select-option value="provider">Provider</ion-select-option>
           <ion-select-option value="admin">Admin</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
-          <ion-input placeholder="Phone #" [(ngModel)]="cellPhone"></ion-input>
+          <ion-input placeholder="Phone #" [(ngModel)]="authUser.cellPhone"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input placeholder="Email*" [(ngModel)]="email"></ion-input>
+        <ion-input placeholder="Email*" [(ngModel)]="authUser.email"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-input placeholder="Password*" type="password" [(ngModel)]= "password"> </ion-input>
+          <ion-input placeholder="Password*" type="password" [(ngModel)]= "authUser.password"> </ion-input>
       </ion-item>
       <div text-center>
         <ion-button shape="round" (click)="register()">REGISTER</ion-button>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/details?listingId={{listing.id}}"></ion-back-button>
+          <ion-title>Bookings</ion-title><br>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let booking of bookings">
+    <ion-card-header>
+      <div text-center>
+          <span style="color: black;" >ID: {{booking.id}}     ||      </span>
+          <span style="color: goldenrod;">STATUS: {{booking.status}}</span>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+        <div text-center *ngIf = "booking.status == 'NEW'">
+            <ion-button shape="round" color = "success" (click)="updateStatus(booking.id, 'ACCEPTED')">ACCEPT</ion-button>
+            <ion-button shape="round"  color = "danger" (click)="updateStatus(booking.id, 'REJECTED')">REJECT</ion-button>
+        </div>
+        <div text-center *ngIf = "booking.status == 'ACCEPTED'" >
+            <ion-button shape="round" color = "success" (click)="updateStatus(booking.id, 'ACCEPTED')">ACCEPTED</ion-button>
+            <ion-button shape="round"  color = "dark" (click)="updateStatus(booking.id, 'REJECTED')">REJECT</ion-button>
+        </div>
+        <div text-center *ngIf = "booking.status == 'REJECTED'" >
+            <ion-button shape="round" color = "dark" (click)="updateStatus(booking.id, 'ACCEPTED')">ACCEPT</ion-button>
+            <ion-button shape="round"  color = "danger" (click)="updateStatus(booking.id, 'REJECTED')">REJECTED</ion-button>
+        </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

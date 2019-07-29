@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/main/existing"></ion-back-button>
+          <ion-title>View Details</ion-title><br>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+      <ion-card-content>
+        <ion-title text-center>{{listing.title}}</ion-title>
+        <ion-item>
+        <div>
+          <img id = "rcorners" src={{listing.imgUrl}}><br>
+          <strong>Location: </strong>{{listing.location}}<br>
+          <strong>Description: </strong>{{listing.description}}<br>
+          <strong>Price Per Night: </strong>${{listing.pricePerNight}}<br>
+          <strong>Rating: </strong>{{listing.rating}}/10<br>
+          <strong>Image Url: </strong>{{listing.imgUrl}}<br>
+          </div>
+        </ion-item>
+        <div text-center>
+            <ion-button shape="round" (click)="navTo('update')">Update Listing</ion-button>
+        </div>
+        <div text-center>
+            <ion-button shape="round" (click)="navTo('bookings')">Bookings</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  
