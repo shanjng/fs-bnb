@@ -1,59 +1,35 @@
-# Fullstack-BnB
-This is a online housing marketplace app. I built if off of inspiration from AirBnB's own app and a desire to test what I personally knew about fullstack coding to the test. There are 3 forms of the app and an API that can be run locally. You may buy, sell, list, and analyze properties as if you were a customer, provider, or on the admin panel. 
+# FullStack-BnB
 
-## Getting Started
+This is a online housing marketplace app. I built if off of inspiration from AirBnB's own app and a desire to put what I learned about fullstack coding to the test. There are 3 forms of the app and an API that can be run locally. You may buy, sell, list, and analyze properties as if you were a customer, provider, or on the admin panel. 
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+### Installation
 
-### Prerequisites
-
-What things you need to install the software and how to install them
+Enter enter of the app/API directories and use the below command to download all needed dependencies that are listed in package.json and needed to run the apps.
 
 ```
-Give examples
+$ npm install
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Run the below command in any of the app directories to get the app running on your localhost running.
+
+```
+$ npm start
+```
+
+If you are running the consumer/provider/admin app you must first run the API with the above command for full functionality. 
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Angular](https://angular.io/) - The web framework used
+* [Ionic](https://ionicframework.com/) - SDK used on top of Angular
+* [Express.js](https://expressjs.com/) - Used to handle API requests and routing
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+This was made in inspiration of the AirBnB app and during my time in Cape Town, South Africa.
 
 ## Project File Structure
 | PROJECT             | COMPONENT          | FILE NAMES                                                                                                                                                                              |
