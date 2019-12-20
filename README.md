@@ -33,8 +33,8 @@ All SQL requests are with a local database. Set up the local database using a so
 
 This app was inspired by the AirBnB app and created during my time in Cape Town, South Africa.
 
-## App File Structure
-| PROJECT             | COMPONENT          | FILE NAMES                                                                                                                                                                              |
+## File Structure
+| APP                 | COMPONENT          | FILE NAMES                                                                                                                                                                              |
 |---------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Consumer mobile app | Login              | ix_final_proj\consumer-mobile-app\src\app\pages\login        |
 | Consumer mobile app | Registration       | ix_final_proj\consumer-mobile-app\src\app\pages\registration |
