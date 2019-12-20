@@ -1,6 +1,6 @@
 # FullStack-BnB
 
-This is an online housing marketplace app. I developed this app off inspiration from AirBnB's own app and a desire to put what I learned about fullstack coding to the test. There are 3 forms of the app and an API that can be run locally. You may buy, sell, list, and analyze properties as if you were a customer, provider, or on the admin panel. 
+This is an online housing marketplace app. I developed this app off of inspiration from AirBnB's own app and a desire to put what I learned about fullstack coding to the test. There are 3 forms of the app and an API that can be run locally. You may buy, sell, list, and analyze properties as if you were a customer, provider, or on the admin panel. 
 
 ### Installation
 
