@@ -20,7 +20,7 @@ $ npm start
 
 If you are running the consumer/provider/admin app you must first run the API with the above command for full functionality.
 
-All SQL requests are with a local database. Set up the local database using a software like MySQL Workbench and change the configuration details in this file: ```./API/src/data-base/data-base.js```. The SQL conection variable will be updated throughout theh program. 
+All SQL requests are with a local database. Set up the local database using a software like MySQL Workbench and change the configuration details in this file: ```./API/src/data-base/data-base.js```. The SQL conection variable will then be automatically updated throughout the program. 
 
 ## Built With
 
