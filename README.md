@@ -18,7 +18,9 @@ Run the below command in any of the app directories to get the app running on yo
 $ npm start
 ```
 
-If you are running the consumer/provider/admin app you must first run the API with the above command for full functionality. 
+If you are running the consumer/provider/admin app you must first run the API with the above command for full functionality.
+
+All SQL requests are with a local database. Set up the local database using a software like MySQL Workbench and change the configuration details in this file: ```./API/src/data-base/data-base.js```. The SQL conection variable will be updated throughout theh program. 
 
 ## Built With
 
@@ -29,9 +31,9 @@ If you are running the consumer/provider/admin app you must first run the API wi
 
 ## Acknowledgments
 
-This was made in inspiration of the AirBnB app and during my time in Cape Town, South Africa.
+This app was inspired by the AirBnB app and created during my time in Cape Town, South Africa.
 
-## Project File Structure
+## App File Structure
 | PROJECT             | COMPONENT          | FILE NAMES                                                                                                                                                                              |
 |---------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Consumer mobile app | Login              | ix_final_proj\consumer-mobile-app\src\app\pages\login        |
